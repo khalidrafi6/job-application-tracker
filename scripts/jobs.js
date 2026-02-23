@@ -30,3 +30,15 @@ function updateJob (btns, cls, countId) {
 
 updateJob(intBtns, 'int-job', intCount);
 updateJob(rejBtns, 'rej-job', rejCount);
+
+const trashBtns = document.getElementsByClassName('trash-btn');
+
+for (let i = 0; i < trashBtns.length; i++) {
+    let btn = trashBtns[i];
+    btn.addEventListener("click", () => {
+        let jobElem = btn.parentNode.parentNode;
+        jobElem.remove();
+        totalCount.innerText = allJobs.childElementCount;
+        tabCount.innerText = allJobs.childElementCount;
+    })
+}
