@@ -1,23 +1,25 @@
 const intBtns = document.getElementsByClassName('int-btn');
 const rejBtns = document.getElementsByClassName('rej-btn');
 
-const jobStatus = document.getElementById('job-status');
-
 function updateJob (btns, cls, countId) {
     for (let i = 0; i < btns.length; i++) {
         let btn = btns[i];
         btn.addEventListener("click", () => {
             let jobElem = btn.parentNode.parentNode;
+            let statusBadge = jobElem.getElementsByClassName('job-status');
+            
             if (cls === 'int-job') {
                 if (jobElem.classList.contains('rej-job')) {
                     jobElem.classList.remove('rej-job');
                     rejCount.innerText = Number(rejCount.innerText) - 1;
                 }
+                statusBadge[0].innerText = "INTERVIEW";
             } else {
                 if (jobElem.classList.contains('int-job')) {
                     jobElem.classList.remove('int-job');
                     intCount.innerText = Number(intCount.innerText) - 1;
                 }
+                statusBadge[0].innerText = "REJECTED";
             };
             jobElem.classList.add(cls);
             let jobs = document.getElementsByClassName(cls);
