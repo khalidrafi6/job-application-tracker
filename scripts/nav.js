@@ -52,8 +52,11 @@ function tabClick(tab, count, statusClass) {
             for (let j = 0; j < allJobsChildren.length; j++) {
                 if (!allJobsChildren[j].classList.contains(statusClass)) {
                     allJobsChildren[j].classList.add('hidden');
+                } else {
+                    allJobsChildren[j].classList.remove('hidden');
                 }
             }
+            noJobs.classList.add('hidden');
         }
         
     } else {

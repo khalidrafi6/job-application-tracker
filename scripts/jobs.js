@@ -11,13 +11,29 @@ function updateJob (btns, cls, countId) {
             if (cls === 'int-job') {
                 if (jobElem.classList.contains('rej-job')) {
                     jobElem.classList.remove('rej-job');
-                    rejCount.innerText = Number(rejCount.innerText) - 1;
+                    let newCount = Number(rejCount.innerText) - 1;
+                    if (rejTab.classList.contains('bg-blue-500')) {
+                        tabCount.innerText = newCount;
+                        jobElem.classList.add('hidden');
+                        if (newCount === 0) {
+                            noJobs.classList.remove('hidden');
+                        }
+                    }
+                    rejCount.innerText = newCount;
                 }
                 statusBadge[0].innerText = "INTERVIEW";
             } else {
                 if (jobElem.classList.contains('int-job')) {
                     jobElem.classList.remove('int-job');
-                    intCount.innerText = Number(intCount.innerText) - 1;
+                    let newCount = Number(intCount.innerText) - 1;
+                    if (intTab.classList.contains('bg-blue-500')) {
+                        tabCount.innerText = newCount;
+                        jobElem.classList.add('hidden');
+                        if (newCount === 0) {
+                            noJobs.classList.remove('hidden');
+                        }
+                    }
+                    intCount.innerText = newCount;
                 }
                 statusBadge[0].innerText = "REJECTED";
             };
@@ -39,6 +55,8 @@ for (let i = 0; i < trashBtns.length; i++) {
         let jobElem = btn.parentNode.parentNode;
         jobElem.remove();
         totalCount.innerText = allJobs.childElementCount;
+        intCount.innerText = intJobs.length;
+        rejCount.innerText = rejJobs.length;
         tabCount.innerText = allJobs.childElementCount;
     })
 }
