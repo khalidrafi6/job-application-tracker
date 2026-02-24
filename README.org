@@ -4,7 +4,30 @@
 
 Returns ~Element~ object for the element whose ~id~ attribute matches the given string
 
+** ~getElementsByClassName~
+
+Returns an =HTMLCollection= of all elements which contain the given ~class~ name(s)
+
+** ~querySelector~
+
+Returns the first =Element= that matches the specified CSS selector or group of CSS selectors
+
+** ~querySelectorAll~
+
+Returns a =NodeList= of elements that match the given CSS selector or group of CSS selectors
+
 * 2. How do you create and insert a new element into the DOM?
+
+To create an element, I use the ~document.createElement()~ method. And, to insert it at the end of an element as a child, I use the ~appendChild()~ method. I also use the ~insertBefore()~ method to insert an element before the specified one.
+
 * 3. What is Event Bubbling? And how does it work?
+
+An event bubbles up to the parents of its source element. That's why when we add an event listener to an element, it also listens to that event from that element's children.
+
 * 4. What is Event Delegation in JavaScript? Why is it useful?
+
+Event Delegation is the process of delegating the handling of an event to another element. Since events bubble up, we can use Event Delegation handle an event from the parent element which has the event listener instead of the element that actually received the event. It can help keep the code clean as we can avoid adding event listeners to all the children of an element.
+
 * 5. What is the difference between preventDefault() and stopPropagation() methods?
+
+~preventDefault()~ method prevents default action triggered by an event. It doesn't stop an event from bubbling up. Whereas, ~stopPropagation()~ method stops the event from bubbling up further to any other element.
