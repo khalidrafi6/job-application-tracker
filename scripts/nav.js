@@ -57,6 +57,7 @@ function tabClick(tab, count, statusClass) {
                 }
             }
             noJobs.classList.add('hidden');
+            allJobs.classList.remove('hidden');
         }
 
         tabCount.innerText = count.innerText + " of " + totalCount.innerText;

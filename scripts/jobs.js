@@ -13,7 +13,7 @@ function updateJob (btns, cls, countId) {
                     jobElem.classList.remove('rej-job');
                     let newCount = Number(rejCount.innerText) - 1;
                     if (rejTab.classList.contains('bg-blue-500')) {
-                        tabCount.innerText = newCount;
+                        tabCount.innerText = newCount + " of " + totalCount.innerText;
                         jobElem.classList.add('hidden');
                         if (newCount === 0) {
                             noJobs.classList.remove('hidden');
@@ -27,7 +27,7 @@ function updateJob (btns, cls, countId) {
                     jobElem.classList.remove('int-job');
                     let newCount = Number(intCount.innerText) - 1;
                     if (intTab.classList.contains('bg-blue-500')) {
-                        tabCount.innerText = newCount;
+                        tabCount.innerText = newCount + " of " + totalCount.innerText;
                         jobElem.classList.add('hidden');
                         if (newCount === 0) {
                             noJobs.classList.remove('hidden');
