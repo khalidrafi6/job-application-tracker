@@ -21,7 +21,7 @@ function updateJob (btns, cls, countId) {
                     }
                     rejCount.innerText = newCount;
                 }
-                statusBadge[0].innerText = "INTERVIEW";
+                statusBadge[0].innerHTML = '<span class="text-green-700">INTERVIEW</span>';
             } else {
                 if (jobElem.classList.contains('int-job')) {
                     jobElem.classList.remove('int-job');
@@ -35,7 +35,7 @@ function updateJob (btns, cls, countId) {
                     }
                     intCount.innerText = newCount;
                 }
-                statusBadge[0].innerText = "REJECTED";
+                statusBadge[0].innerHTML = '<span class="text-red-700">REJECTED</span>';
             };
             jobElem.classList.add(cls);
             let jobs = document.getElementsByClassName(cls);

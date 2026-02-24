@@ -58,6 +58,8 @@ function tabClick(tab, count, statusClass) {
             }
             noJobs.classList.add('hidden');
         }
+
+        tabCount.innerText = count.innerText + " of " + totalCount.innerText;
         
     } else {
         allJobs.classList.remove('hidden');
@@ -65,9 +67,9 @@ function tabClick(tab, count, statusClass) {
                     allJobsChildren[j].classList.remove('hidden');
         }
         noJobs.classList.add('hidden');
-    };
 
     tabCount.innerText = numberCount;
+    };
 };
 
 for (let i = 0; i < 3; i++) {
